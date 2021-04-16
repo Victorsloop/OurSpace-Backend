@@ -1,0 +1,2 @@
+class Dillema < ApplicationRecord
+end
