@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
     skip_before_action :authorized
 
     def index
-        users = User.all.includes(:thoughts)
+        users = User.all.includes(:dillemas)
         render json: users
     end 
 
@@ -42,7 +42,7 @@ class Api::V1::UsersController < ApplicationController
 
     private 
     def user_params
-        params.require(:user).permit(:username, :password, :email, :name, :pronoun,  :avatar)
+        params.require(:user).permit(:username, :password, :email, :name, :pronoun, :avatar)
     end 
 
 end
